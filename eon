@@ -1,0 +1,21 @@
+#! /bin/bash
+
+
+# Initialize empty array
+jlines=()
+
+# Start read loop
+while IFS= read -r -p "" line; do
+    [[ $line ]] || break
+    timelines+=("$line")
+done
+
+# Write array to temp file
+echo $timelines > temp
+
+# Call python
+# python3 jparse.py --field='emp1' --jfile='temp.json'
+
+# Remove temp file
+rm temp
+
