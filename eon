@@ -17,24 +17,21 @@ echo "> seconds first, then milliseconds."
 echo "> To start converting press enter twice."
 echo "----------------------------------------"
 
-# Initialize empty array
-timelines=()
+# Initialize empty text file
+touch temp.txt
 
 # Start read loop
 while IFS= read -r -p "" line; do
     [[ $line ]] || break
-    timelines+=("$line")
+    # Append entered line to a temp text file
+    echo $line >> temp.txt
 done
 
-echo $timelines
-# Write array to temp file
-echo $timelines > temp
-
 # Call python
-python3 epoch.py --times='temp'
+python3 epoch.py --times='temp.txt'
 
 # Remove temp file
-rm temp
+rm temp.txt
 
 echo
 echo "Done!"
