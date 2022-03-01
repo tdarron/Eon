@@ -1,5 +1,23 @@
 #! /bin/bash
 
+echo -e "███████╗ ██████╗ ███╗   ██╗"
+echo -e "██╔════╝██╔═══██╗████╗  ██║"
+echo -e "█████╗  ██║   ██║██╔██╗ ██║"
+echo -e "██╔══╝  ██║   ██║██║╚██╗██║"
+echo -e "███████╗╚██████╔╝██║ ╚████║"
+echo -e "╚══════╝ ╚═════╝ ╚═╝  ╚═══╝"
+echo -e "=== created by darrontd ==="
+echo
+echo "Instructions"
+echo "> Enter a single epoch timestamp"
+echo "> or enter one by line, or paste"
+echo "> multiple in a block."
+echo "> It will attempt to use epoch"
+echo "> seconds first, then milliseconds."
+echo "> To start converting press enter twice."
+echo "----------------------------------------"
+
+
 
 # Initialize empty array
 jlines=()
@@ -14,7 +32,7 @@ done
 echo $timelines > temp
 
 # Call python
-# python3 jparse.py --field='emp1' --jfile='temp.json'
+python3 epoch.py --times='temp'
 
 # Remove temp file
 rm temp
