@@ -24,4 +24,5 @@ try:
 except:
     # Attempt milliseconds
     for i in epoch_list:
-        print(datetime.datetime.fromtimestamp(i/1000.0).strftime('%Y-%m-%d %H:%M:%S.%f'))
+        longtime = datetime.datetime.fromtimestamp(i/1000.0).strftime('%Y-%m-%d %H:%M:%S.%f')
+        print(longtime[:-3])
