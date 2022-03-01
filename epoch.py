@@ -25,8 +25,11 @@ try:
     # Attempt in seconds first
     for i in epoch_list:
         print(datetime.datetime.fromtimestamp(i).strftime('%Y-%m-%d %H:%M:%S'))
-except:
+except ValueError:
     # Attempt milliseconds
     for i in epoch_list:
         longtime = datetime.datetime.fromtimestamp(i/1000.0).strftime('%Y-%m-%d %H:%M:%S.%f')
         print(longtime[:-3])
+except:
+    # Everything is broke oh no
+    print("Timestamp is way too long and python got upset")
