@@ -17,10 +17,8 @@ echo "> seconds first, then milliseconds."
 echo "> To start converting press enter twice."
 echo "----------------------------------------"
 
-
-
 # Initialize empty array
-jlines=()
+timelines=()
 
 # Start read loop
 while IFS= read -r -p "" line; do
@@ -28,6 +26,7 @@ while IFS= read -r -p "" line; do
     timelines+=("$line")
 done
 
+echo $timelines
 # Write array to temp file
 echo $timelines > temp
 
@@ -37,3 +36,5 @@ python3 epoch.py --times='temp'
 # Remove temp file
 rm temp
 
+echo
+echo "Done!"
