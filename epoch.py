@@ -14,7 +14,11 @@ args = parser.parse_args()
 
 # Load passed file to list
 with open(args.times) as t:
-    epoch_list = [int(stamp) for stamp in t]
+    try:
+        epoch_list = [int(stamp) for stamp in t]
+    except:
+        print("Non-number entered, check input and try again")
+        quit()
 
 # Begin loop of converting
 try:
