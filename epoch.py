@@ -15,13 +15,12 @@ args = parser.parse_args()
 # Load passed file to list
 with open(args.times) as t:
     epoch_list = [int(stamp) for stamp in t]
-print(epoch_list)
 
 # Begin loop of converting
 try:
     # Attempt in seconds first
     for i in epoch_list:
-        print(datetime.datetime.fromtimestamp(i).strftime('%Y-%m-%d %H:%M:%S.%f'))
+        print(datetime.datetime.fromtimestamp(i).strftime('%Y-%m-%d %H:%M:%S'))
 except:
     # Attempt milliseconds
     for i in epoch_list:
